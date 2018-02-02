@@ -6,4 +6,4 @@ class Hello
         }
     }
 
-Hello, I am checking to see if this works
+Hello, I am checking to see if this works. 
