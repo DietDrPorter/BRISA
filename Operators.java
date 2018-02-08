@@ -1,33 +1,43 @@
 class Operators {
     public static void main(String args[]) {
- String firstName = "Brisa";
- String lastName = "Porter";
- String fullName= firstName+ " " +lastName;
 
-    System.out.println(firstName);
-    System.out.println("firstName");
-    System.out.println(lastName);
-    System.out.println("lastName");
-    System.out.println(fullName);
-    System.out.println("fullName");
-        
-         int currentAge = -17;
-    int nextAge = currentAge + 17;
-    System.out.println(currentAge);
-    System.out.println(nextAge);
+//int targetSavingsGoal = -30000;
+//int savingPerMonth = -500;
 
-    int halfCurrentAge = currentAge / 2;
-    int halfNextAge = nextAge / 2;
-    System.out.println(halfCurrentAge);
-    System.out.println(halfNextAge);
-        
-        int moduloCurrentAge = currentAge % 2;
-    int moduloNextAge = nextAge % 2;
-    System.out.println(moduloCurrentAge);
-    System.out.println(moduloNextAge);
-        
-        
+//int monthsUntilGoal = targetSavingsGoal / savingPerMonth;
+
+//System.out.println(monthsUntilGoal);
+//System.out.println("Months Until Goal");
+
+//String firstName = "Brisa" ;
+//String connect = "and";
+//String friendName = "Kim";
+//String were = "were";
+//String comeBack= "holding on";
+//String to = "to";
+//String what = "what";
+//String we = "we";
+//String right = "persume";
+//String is = "is";
+//String all = "all";
+//String that = "that";
+//String noun = "worthless";
+
+//String scentenceOne = firstName + " " + connect + " " + friendName + " " + were + " " + comeBack + " " + to + " " + what + " " + we  + " " ;
+//System.out.println(scentenceOne);
+
+int loanAmount = 50000;
+double interestRate = .08;
+int loanPaybackPeriod = 12;
+double interestPerMonth = loanAmount * interestRate / loanPaybackPeriod;
+double totalLoan = loanAmount + interestPerMonth;
+
+System.out.println(interestPerMonth);
+System.out.println("Interest Per Month");
+System.out.println(totalLoan);
+System.out.println("Total Loan");
 
     }
 }
+
 
