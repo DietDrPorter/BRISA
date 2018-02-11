@@ -32,7 +32,7 @@ class ValidationUtils {
 
         try {
 
-            int i = scan.nextLine();
+            int i = scan.nextInt();
 
         }
 
