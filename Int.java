@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 class ValidationUtils {
 
-    public static void main(Int args[]) {
+    public static void main(String args[]) {
 
         System.out.print("Enter an integer: ");
 
         Scanner scan = new Scanner(System.in);
 
-        if(isValidint(scan)) {
+        if(isValidInt(scan)) {
 
-            System.out.println("String Success!");
+            System.out.println("Integer Success!");
 
         }
 
@@ -28,11 +28,11 @@ class ValidationUtils {
 
     
 
-    public static Boolean isValidint(Scanner scan) {
+    public static Boolean isValidInt(Scanner scan) {
 
         try {
 
-            int s = scan.nextLine();
+            int i = scan.nextLine();
 
         }
 
