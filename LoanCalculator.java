@@ -32,8 +32,45 @@ public class LoanCalculator{
     }
 
     public static void flatInterest() {
-        System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
-        //Calculate flat interest and print it out here
+       
+       Scanner scan = new Scanner(System.in);
+       System.out.print("Enter a Loan Amount:");
+
+       if(scan.hasNextInt()) {
+          loanAmount = scan.nextInt();
+       }
+       
+        else {
+            System.out.println("Not a valid loan amount.");
+        }
+        System.out.println("Enter an interest rate:");
+        if(scan.hasNextDouble()){
+            interestRate = scan.nextDouble();
+        }
+        else {
+
+            System.out.println("Not a valid interest rate.");    
+        }
+        if(scan.hasNextInt()){
+            loanPaybackPeriod = scan.nextInt();
+        }
+        else{
+            System.out.println("Not a valid loan term.");
+        }
+        
+        double interesttotal = loanAmount * interestRate * loanPaybackPeriod;
+        double totalLoan = loanAmount + interesttotal;
+
+        System.out.println(loanAmount);
+        System.out.println("Original Loan Amount:");
+        System.out.println(loanPaybackPeriod);
+        System.out.println("Loan Term:");
+        System.out.println(interestRate);
+        System.out.println("Interest Rate:");
+        System.out.println(interesttotal);
+        System.out.println("Interest to be Paid:");
+        System.out.println(totalLoan);
+        System.out.println("Total Loan:");
     }
 
     public static void printModeStatement() {
