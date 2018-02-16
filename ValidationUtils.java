@@ -94,17 +94,17 @@ class ValidationUtils {
 
     
    // public static Boolean isValidBoolean(Scanner scan) {
-        try {
-            String s = scan.nextLine();
+       // try {
+           // String s = scan.nextLine();
             
     
              
-        }
-        catch(Exception e) {
-            return false; //An error was raised. The user input could not be read as a String.
-        }
-        return true; //No error was raised. The scanner read it successfully as a String.
-    }
+        //}
+        //catch(Exception e) {
+           // return false; //An error was raised. The user input could not be read as a String.
+       // }
+       // return true; //No error was raised. The scanner read it successfully as a String.
+  //  }
 public static Boolean isValidBoolean(Scanner scan) {
      String s = scan.nextLine();
        return (
