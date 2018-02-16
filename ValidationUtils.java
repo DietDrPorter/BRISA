@@ -62,7 +62,11 @@
        // }
    // }
 
+<<<<<<< HEAD
     
+=======
+//    
+>>>>>>> ef0d3dbc2c0ac7293adc7a044a2c2454c55bb323
    // public static Boolean isValidDouble(Scanner scan) {
      //   try {
           //  double d = scan.nextDouble();
@@ -95,6 +99,7 @@ class ValidationUtils {
     
    // public static Boolean isValidBoolean(Scanner scan) {
        // try {
+<<<<<<< HEAD
            // String s = scan.nextLine();
             
     
@@ -105,6 +110,18 @@ class ValidationUtils {
        // }
        // return true; //No error was raised. The scanner read it successfully as a String.
   //  }
+=======
+          //  String s = scan.nextLine();
+           
+    
+             
+       // }
+        //catch(Exception e) {
+           // return false; //An error was raised. The user input could not be read as a String.
+       // }
+        //return true; //No error was raised. The scanner read it successfully as a String.
+   // }
+>>>>>>> ef0d3dbc2c0ac7293adc7a044a2c2454c55bb323
 public static Boolean isValidBoolean(Scanner scan) {
      String s = scan.nextLine();
        return (
@@ -120,5 +137,8 @@ public static Boolean isValidBoolean(Scanner scan) {
     }
              
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ef0d3dbc2c0ac7293adc7a044a2c2454c55bb323
