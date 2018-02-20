@@ -7,6 +7,7 @@ public class LoanCalculator{
     public static double interestRate = -1;
     public static double totalLoan = -1;
     public static double interesttotal = -1;
+    public static double loanLeft = -1;
    
 
     public static void main(String[] args) {
@@ -25,6 +26,7 @@ public class LoanCalculator{
         }
 
    
+        System.out.println("You selected mode " + mode);
 
     
         if(mode == 1) {
@@ -39,6 +41,15 @@ public class LoanCalculator{
         else {
             System.out.println("Not a valid mode."); //Replace this with calls to your appropriate functions            
         }
+    }
+
+         public static void printModeStatement() {
+         System.out.println(
+            "Select an interest calculation mode:\n"
+            + "(1) Flat Interest\n"
+            + "(2) Compounding Interest Without Monthly Payments\n"
+            + "(3) Compounding Interest With Monthly Payments\n"
+        );
     }
 
     public static void flatInterest() {
@@ -84,7 +95,7 @@ public class LoanCalculator{
 
         double interestPercent = interestRate / 100;
         double loanMonths = loanTerm * 12;
-        double interesttotal = loanAmt * interestPercent * loanMonths;
+        double interesttotal = loanAmt * interestPercent / loanMonths;
         double totalLoan = loanAmt + interesttotal;
         
 
@@ -149,8 +160,8 @@ public class LoanCalculator{
         System.out.println("Original Loan Amount:" + loanAmt);
         System.out.println("Loan Term:" + loanTerm);
         System.out.println("Interest Rate:"+ interestRate);
-        System.out.println("Interest to be Paid:" + interesttotal);
-        System.out.println("Total Loan:" + totalLoan);
+        System.out.println("Interest to be Paid:" + totalInterest);
+        System.out.println("Total Loan:" + loanTotal);
     } 
 
     public static void cmpndWInterest() {
@@ -194,14 +205,25 @@ public class LoanCalculator{
             
         }
 
-
+        
         double interestPercent = interestRate / 100;
         double ratePerMonth = interestPercent /12;
-        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
-        double totalLoan = loanAmt * monthlyPayment;
-        double interesttotal = totalLoan - loanAmt;
+        double loanMonths = loanTerm * 12;
+        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))); 
+        double interesttotal = 0; 
+        
+        while(loanAmt > 0) {
+        double interest = totalLoan * (interestPercent / 12);
+        double loanLeft = loanAmt + interest - monthlyPayment;
+        interesttotal += interest; 
+            if(loanAmt == 0 ) {
+                System.out.println(" Payment amount for the final month left of the loan: " + interest);
+                break;
+            }
+            
+    }
 
-
+        double totalLoan = loanAmt + interesttotal;
 
         System.out.println("You selected mode " + mode);
         System.out.println("Original Loan Amount:" + loanAmt);
@@ -209,6 +231,14 @@ public class LoanCalculator{
         System.out.println("Monthly Payment:"+ monthlyPayment);
         System.out.println("Interest to be Paid:" + interesttotal);
         System.out.println("Total Loan:" + totalLoan);
+        
+        
+      
+        
+
+
+
+          
     } 
 
 }
