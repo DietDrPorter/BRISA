@@ -153,7 +153,7 @@ public class LoanCalculator{
         System.out.println("Total Loan:" + totalLoan);
     } 
 
-    public static void cmpndWOInterest() {
+    public static void cmpndWInterest() {
 
         Scanner scan;
         while(true) { 
