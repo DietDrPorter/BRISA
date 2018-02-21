@@ -95,7 +95,7 @@ public class LoanCalculator{
 
         double interestPercent = interestRate / 100;
         double loanMonths = loanTerm * 12;
-        double interesttotal = loanAmt * interestPercent / loanMonths;
+        double interesttotal =  interestPercent * loanAmt * loanTerm;
         double totalLoan = loanAmt + interesttotal;
         
 
@@ -214,9 +214,9 @@ public class LoanCalculator{
         
         while(loanAmt > 0) {
         double interest = totalLoan * (interestPercent / 12);
-        double loanLeft = loanAmt + interest - monthlyPayment;
-        interesttotal += interest; 
-            if(loanAmt == 0 ) {
+        double loanAmtLeft = loanAmt + interest - monthlyPayment;
+        interesttotal = interesttotal + interest; 
+            if(loanAmt <= 0 ) {
                 System.out.println(" Payment amount for the final month left of the loan: " + interest);
                 break;
             }
