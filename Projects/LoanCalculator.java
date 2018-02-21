@@ -212,7 +212,7 @@ public class LoanCalculator{
         
         while(remainder > 0) {
             double monthlyInterest = remainder * (interestPercent / 12);
-            remainder = loanAmt + monthlyInterest - monthlyPayment;
+            remainder = remainder + monthlyInterest - monthlyPayment;
             interesttotal = interesttotal + monthlyInterest; 
             if(remainder == 0 ) {
                 
@@ -220,8 +220,9 @@ public class LoanCalculator{
             }
             
         }
-        double finalMonth = monthlyPayment + loanAmt; 
         double totalLoan = loanAmt + interesttotal;
+        double finalMonth = (monthlyPayment*12*loanTerm) - (monthlyPayment + totalLoan); 
+       
 
         System.out.println("You selected mode " + mode);
         System.out.println("Loan Term:" + loanTerm);
