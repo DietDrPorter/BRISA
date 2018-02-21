@@ -38,9 +38,7 @@ public class LoanCalculator{
         if(mode == 3) {
             cmpndWInterest();
         }
-        else {
-            System.out.println("Not a valid mode."); //Replace this with calls to your appropriate functions            
-        }
+        
     }
 
          public static void printModeStatement() {
@@ -210,18 +208,18 @@ public class LoanCalculator{
         double ratePerMonth = interestPercent /12;
         double loanMonths = loanTerm * 12;
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))); 
+        double remainder = loanAmt;
         
-        
-        while(loanAmt > 0) {
-        double monthlyInterest = loanAmt * (interestPercent / 12);
-        loanAmt = loanAmt + monthlyInterest - monthlyPayment;
-        interesttotal = interesttotal + monthlyInterest; 
-            if(loanAmt == 0 ) {
+        while(remainder > 0) {
+            double monthlyInterest = remainder * (interestPercent / 12);
+            remainder = loanAmt + monthlyInterest - monthlyPayment;
+            interesttotal = interesttotal + monthlyInterest; 
+            if(remainder == 0 ) {
                 
                 break;
             }
             
-    }
+        }
         double finalMonth = monthlyPayment + loanAmt; 
         double totalLoan = loanAmt + interesttotal;
 
