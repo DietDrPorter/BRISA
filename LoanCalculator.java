@@ -210,25 +210,25 @@ public class LoanCalculator{
         double ratePerMonth = interestPercent /12;
         double loanMonths = loanTerm * 12;
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))); 
-        double interesttotal = 0; 
+        
         
         while(loanAmt > 0) {
-        double interest = totalLoan * (interestPercent / 12);
-        double loanAmtLeft = loanAmt + interest - monthlyPayment;
-        interesttotal = interesttotal + interest; 
-            if(loanAmt <= 0 ) {
-                System.out.println(" Payment amount for the final month left of the loan: " + interest);
+        double monthlyInterest = loanAmt * (interestPercent / 12);
+        loanAmt = loanAmt + monthlyInterest - monthlyPayment;
+        interesttotal = interesttotal + monthlyInterest; 
+            if(loanAmt == 0 ) {
+                
                 break;
             }
             
     }
-
+        double finalMonth = monthlyPayment + loanAmt; 
         double totalLoan = loanAmt + interesttotal;
 
         System.out.println("You selected mode " + mode);
-        System.out.println("Original Loan Amount:" + loanAmt);
         System.out.println("Loan Term:" + loanTerm);
         System.out.println("Monthly Payment:"+ monthlyPayment);
+        System.out.println( "Payment made in the final month: " + finalMonth);
         System.out.println("Interest to be Paid:" + interesttotal);
         System.out.println("Total Loan:" + totalLoan);
         
