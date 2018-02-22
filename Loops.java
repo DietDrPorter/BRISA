@@ -30,5 +30,29 @@ public class Loops{
             
          //}   
 
+         // int n = 0;
+         //while(n < 120) {
+         //System.out.println(n);
+         // n += 3;        
+         // }
+
+        
+            char alpha = 'a';
+
+            while(alpha < 'z') {
+            
+                
+                System.out.println(alpha); //Prints 'a'
+                alpha++;
+                System.out.println(alpha); //Prints 'b'
+                    if(alpha == 'z' ) {
+                        alpha++;
+                        break;
+                    }
+                    
+            }
+
     }
+
+    
 }
