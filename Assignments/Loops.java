@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Loops{
 
@@ -69,9 +69,26 @@ public class Loops{
           //  System.out.println(i);
        // }
 
+        public static void printModeStatement() {
+         System.out.println(
+            "Enter a valid integer:\n" );
+        }
+    
+
        for(int i = 0; i <= 3; i ++ ){
            
+           Scanner scan = new Scanner(System.in);
+           if(0 < i && i < 4) {
+               System.out.println("Integer Success!");
+            }
+        
+            else{
+                System.out.println("Failure");
+            }
+
+
        }
+    
     }
 
     
