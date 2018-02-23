@@ -37,21 +37,41 @@ public class Loops{
          // }
 
         
-            char alpha = 'a';
+           // char alpha = 'a';
 
-            while(alpha < 'z') {
+           //while(alpha < 'z') {
             
                 
-                System.out.println(alpha); //Prints 'a'
-                alpha++;
-                System.out.println(alpha); //Prints 'b'
-                    if(alpha == 'z' ) {
-                        alpha++;
-                        break;
-                    }
+                //System.out.println(alpha); //Prints 'a'
+                //alpha++;
+                //System.out.println(alpha); //Prints 'b'
+                   // if(alpha == 'z' ) {
+                        //alpha++;
+                       // break;
+                   // }
                     
-            }
+           // }
 
+       // for(int i = 0; i > -100; i--) {
+       // System.out.println(i);
+    //}
+
+            //for(int i = 1; i < 20; i *= 2) {
+       // System.out.println(i);
+    //}
+
+            //for(int i = 1; i < 100; i += 3) {
+                 //System.out.println(i);
+        //}
+
+
+          //  for(int i = 1; i < 1024; i *= 2) {
+          //  System.out.println(i);
+       // }
+
+       for(int i = 0; i <= 3; i ++ ){
+           
+       }
     }
 
     
