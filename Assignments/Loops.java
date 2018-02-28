@@ -69,22 +69,26 @@ public class Loops{
           //  System.out.println(i);
        // }
 
-        public static void printModeStatement() {
-         System.out.println(
-            "Enter a valid integer:\n" );
-        }
-    
-
-       for(int i = 0; i <= 3; i ++ ){
-           
-           Scanner scan = new Scanner(System.in);
-           if(0 < i && i < 4) {
-               System.out.println("Integer Success!");
-            }
+         scan = new Scanner(System.in);
+         printModeStatement();
+         public static void printModeStatement() { 
+             System.out.println("Enter a valid integer:\n");
+         }
         
-            else{
-                System.out.println("Failure");
-            }
+    
+            
+            for(int i = 0 ;  i <= 2 ; i++) {
+                Scanner scan = new Scanner(System.in); 
+                if(scan.hasNextInt()){
+                    System.out.println("Integer Success!");
+                    break;
+                }
+            
+        
+                 else if(i == 2){
+                    System.out.println("Failure");
+                 }
+            }     
 
 
        }
@@ -92,4 +96,5 @@ public class Loops{
     }
 
     
-}
+
+    
