@@ -9,6 +9,8 @@ class Plinko {
 
     public static int mode = -1;
 
+    public static int Input =* 2;
+
     public static void main(String[] args) {
         Scanner scan;
         while(true) {
@@ -19,7 +21,9 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    public static void printModeStatement() {
+                    System.out.println("Select a number 0-8:");
+                    }
                 }
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
@@ -32,18 +36,51 @@ class Plinko {
                 }
             }
         }
+
+        if(mode == SINGLE_DISC){
+            
+            
+
+            if( == )
+
+        }
+
+
+        }
     }
 
-    public static int runOddRow(int position) {
-        //Modify the position.
-        //Print the visualization of the row if it's single disc mode.
+    public static int runEvenRow(int position) {
+       for(int i = 0||2||6||8||4; i <= 16; i++) {
+             if(position == i) {
+                System.out.print("O");
+             }
+            else if(isEven(i)) {
+                System.out.print(" ");
+             }
+             else {
+                System.out.print(".");
+            }
+        }
+        System.out.print("\n");
 
         return position;
     }
 
-    public static int runEvenRow(int position) {
-        //Modify the position.
-        //Print the visualization of the row if it's single disc mode.
+    public static int runOddRow(int position) {
+        
+        for(int i = 1||3||5||7; i <= 15; i++) {
+             if(position == i) {
+                System.out.print("O");
+             }
+            else if(isEven(i)) {
+                System.out.print(" ");
+             }
+             else {
+                System.out.print(".");
+            }
+        }
+        System.out.print("\n");
+
 
         return position;
     }
@@ -51,6 +88,8 @@ class Plinko {
     public static Boolean isEven(int x) {
         return x % 2 == 0;
     }
+
+ 
 
     public static void printModeStatement() {
         System.out.print(
