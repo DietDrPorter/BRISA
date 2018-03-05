@@ -8,6 +8,7 @@ class Plinko {
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
     public static int mode = -1;
+    public static int position = i *2;
     
 
     public static void main(String[] args) {
@@ -32,30 +33,30 @@ class Plinko {
                     continue;
                 }
             }
-    
-
-        public static void singleDisc() {
-
-            Scanner scan;
-            while(true) {
-                scan = new Scanner(System.in);
-                System.out.println("Select a number 0-8:");
-                      if(scan.hasNextInt()) {
-                       int  i = scan.nextInt();
-                        if (i > 8 || i < 0) {
-                            break;
-                        }
-                      
-                      }
-            
-            }   
-
         }
+    }
+    public static void singleDisc() {
+
+        Scanner scan;
+        while(true) {
+            scan = new Scanner(System.in);
+            System.out.println("Select a number 0-8:");
+            if(scan.hasNextInt()) {
+                int  i = scan.nextInt();
+                 if (i > 8 || i < 0) {
+                    break;
+                }   
+            
+            }
         
+        }   
+
+    }
+    
     
 
     public static int runEvenRow(int position) {
-       for(int i = 0||2||6||8||4; i <= 16; i++) {
+       for(int i = 0; i <= 16; i++) {
              if(position == i) {
                 System.out.print("O");
              }
@@ -73,7 +74,7 @@ class Plinko {
 
     public static int runOddRow(int position) {
         
-        for(int i = 1||3||5||7; i <= 14; i++) {
+        for(int i = 1; i <= 15; i++) {
              if(position == i) {
                 System.out.print("O");
              }
@@ -83,6 +84,7 @@ class Plinko {
              else {
                 System.out.print(".");
             }
+
         }
         System.out.print("\n");
 
@@ -94,10 +96,16 @@ class Plinko {
         return x % 2 == 0;
     }
 
-     if(Math.random() > .5 && i > 0 && i < 16) {
-        //Shift Right
+     if(i == 0){
+         position++;
+     }
+     if(i == 16) {
+         position--;
+     }
+     if(Math.random() > .5) {
+        position++;
     } else {
-        //Shift Left
+        position--;
     }
 
  
@@ -112,6 +120,6 @@ class Plinko {
     }
  }
     
-    }
+    
 
 }
