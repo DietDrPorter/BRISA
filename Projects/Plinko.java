@@ -125,7 +125,7 @@ class Plinko {
         }
     }
 
-        public static void noDiscVis() {
+        public static void multiProb() {
 
         for(int n = 1; n <= discs; n++) {
 
@@ -169,7 +169,7 @@ class Plinko {
 
         discAmount();
 
-        noDiscVis();
+        multiProb();
 
         System.out.println("You landed in position 1: "+results[0]+" times.");
 
