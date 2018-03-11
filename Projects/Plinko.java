@@ -53,9 +53,14 @@ class Plinko {
         }
 
         public static void discAmount() {
+           while(true) {
             Scanner scan2 = new Scanner(System.in);
             System.out.println("Enter the number of disks:");
             int discs = scan2.nextInt();
+                if(discs <= 0 ) {
+                break;
+                }
+            }
         }
 
     public static int runEvenRow(int position) {
