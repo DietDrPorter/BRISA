@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 class Plinko {
     public static final int SINGLE_DISC = 1;
@@ -6,7 +6,7 @@ class Plinko {
     public static final int TERMINATE = 3;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
-    public static int[] results = {0,0,0,0,0,0,0,0,0};
+    public static int[] results = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public static int mode = -1;
     public static int position = -1;
