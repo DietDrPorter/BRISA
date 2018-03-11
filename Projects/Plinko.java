@@ -44,8 +44,11 @@ class Plinko {
                 if(scan1.hasNextInt()) {
                        position = scan1.nextInt();
                        position *= 2;
-                    if (position > 8 || position < 0) {
+                    if (8 > position  ||  0 < position) {
                             break;
+                        }
+                        else {
+                            continue;
                         }
                       
                 }
@@ -57,14 +60,17 @@ class Plinko {
             Scanner scan2 = new Scanner(System.in);
             System.out.println("Enter the number of disks:");
             int discs = scan2.nextInt();
-                if(discs <= 0 ) {
+                if(0 < discs ) {
                 break;
+                }
+                else {
+                    continue;
                 }
             }
         }
 
     public static int runEvenRow(int position) {
-       System.out.println("|");
+       System.out.print("|");
        for(int i = 0; i <= 16; i++) {
              if(position == i) {
                 System.out.print("O");
@@ -76,6 +82,7 @@ class Plinko {
                 System.out.print(".");
             }
         }
+        System.out.print("|");
         System.out.print("\n");
 
         return position;
