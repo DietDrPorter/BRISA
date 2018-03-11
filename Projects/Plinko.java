@@ -115,7 +115,6 @@ class Plinko {
             else {
                 position --;
             }
-
             if(isEven(i)){
                 runEvenRow(position);
             }
@@ -125,70 +124,50 @@ class Plinko {
         }
     }
 
-        public static void multiProb() {
+        public static void multiProb() { //Runs the Multi Disc to achieve statistics 
 
         for(int n = 1; n <= discs; n++) {
-
             for(int i = 1; i < 13; i++) {
-
                 if(position == 16) {
-
                     position--;
-
-                } else if(position == 0) {
-
-                    position++;
-
-                } else if(Math.random() > .5) {
-
-                    position++;
-
-                } else {
-
-                    position--;
-
                 }
-
+                 else if(position == 0) {
+                    position++;
+                }
+                 else if(Math.random() > .5) {
+                    position++;
+                } else {
+                    position--;
+                }
             }
-
             results[position/2]++;
-
         }
 
     }
 
      public static void singleDisc() {
+       
          userInput();
          discRun();
+
          System.out.println("Disc results:" +position/2);
         }
  
     public static void multiDisc() {
 
         userInput();
-
         discAmount();
-
         multiProb();
 
         System.out.println("You landed in position 1: "+results[0]+" times.");
-
         System.out.println("You landed in position 2: "+results[1]+" times.");
-
         System.out.println("You landed in position 3: "+results[2]+" times.");
-
         System.out.println("You landed in position 4: "+results[3]+" times.");
-
         System.out.println("You landed in position 5: "+results[4]+" times.");
-
         System.out.println("You landed in position 6: "+results[5]+" times.");
-
         System.out.println("You landed in position 7: "+results[6]+" times.");
-
         System.out.println("You landed in position 8: "+results[7]+" times.");
-
         System.out.println("You landed in position 9: "+results[8]+" times.");
-
         System.out.println("Total points earned: " + VALUES[position/2]);
 
     }    
