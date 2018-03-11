@@ -6,9 +6,11 @@ class Plinko {
     public static final int TERMINATE = 3;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
+    public static int[] results = {0,0,0,0,0,0,0,0,0};
 
     public static int mode = -1;
-    public static int position = i *2;
+    public static int position = -1;
+    public static int discs = -1;
     
 
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ class Plinko {
                     singleDisc();
                 }
                 else if(mode == MULTI_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    multiDisc();
                 }
                 else if(mode == TERMINATE) {
                     System.out.println("Goodbye");
@@ -35,27 +37,29 @@ class Plinko {
             }
         }
     }
-    public static void singleDisc() {
-
-        Scanner scan;
-        while(true) {
-            scan = new Scanner(System.in);
+        public static void userInput() {
+           while (true) {
+            Scanner scan1 = new Scanner(System.in);
             System.out.println("Select a number 0-8:");
-            if(scan.hasNextInt()) {
-                int  i = scan.nextInt();
-                 if (i > 8 || i < 0) {
-                    break;
-                }   
-            
-            }
-        
-        }   
+                if(scan1.hasNextInt()) {
+                       position = scan1.nextInt();
+                       position *= 2;
+                    if (position > 8 || position < 0) {
+                            break;
+                        }
+                      
+                }
+            }    
+        }
 
-    }
-    
-    
+        public static void discAmount() {
+            Scanner scan2 = new Scanner(System.in);
+            System.out.println("Enter the number of disks:");
+            int discs = scan2.nextInt();
+        }
 
     public static int runEvenRow(int position) {
+       System.out.println("|");
        for(int i = 0; i <= 16; i++) {
              if(position == i) {
                 System.out.print("O");
@@ -73,8 +77,8 @@ class Plinko {
     }
 
     public static int runOddRow(int position) {
-        
-        for(int i = 1; i <= 15; i++) {
+        System.out.print("|");
+        for(int i = 0; i <= 16; i++) {
              if(position == i) {
                 System.out.print("O");
              }
@@ -84,8 +88,8 @@ class Plinko {
              else {
                 System.out.print(".");
             }
-
         }
+        System.out.print("|");
         System.out.print("\n");
 
 
@@ -95,20 +99,99 @@ class Plinko {
     public static Boolean isEven(int x) {
         return x % 2 == 0;
     }
+    
+    public static void discRun() {
+        runEvenRow(position);
+        for(int i =1; i <13; i++){
+            if(position ==16) {
+                position--;
+            }
+            else if(position ==0){
+                position++;
+            }
+            else if(Math.random()> .5){
+                position++;
+            }
+            else {
+                position --;
+            }
 
-     if(i == 0){
-         position++;
-     }
-     if(i == 16) {
-         position--;
-     }
-     if(Math.random() > .5) {
-        position++;
-    } else {
-        position--;
+            if(isEven(i)){
+                runEvenRow(position);
+            }
+            else {
+                runOddRow(position);
+            }
+        }
     }
 
+        public static void noDiscVis() {
+
+        for(int n = 1; n <= discs; n++) {
+
+            for(int i = 1; i < 13; i++) {
+
+                if(position == 16) {
+
+                    position--;
+
+                } else if(position == 0) {
+
+                    position++;
+
+                } else if(Math.random() > .5) {
+
+                    position++;
+
+                } else {
+
+                    position--;
+
+                }
+
+            }
+
+            results[position/2]++;
+
+        }
+
+    }
+
+     public static void singleDisc() {
+         userInput();
+         discRun();
+         System.out.println("Disc results:" +position/2);
+        }
  
+    public static void multiDisc() {
+
+        userInput();
+
+        discAmount();
+
+        noDiscVis();
+
+        System.out.println("You landed in position 1: "+results[0]+" times.");
+
+        System.out.println("You landed in position 2: "+results[1]+" times.");
+
+        System.out.println("You landed in position 3: "+results[2]+" times.");
+
+        System.out.println("You landed in position 4: "+results[3]+" times.");
+
+        System.out.println("You landed in position 5: "+results[4]+" times.");
+
+        System.out.println("You landed in position 6: "+results[5]+" times.");
+
+        System.out.println("You landed in position 7: "+results[6]+" times.");
+
+        System.out.println("You landed in position 8: "+results[7]+" times.");
+
+        System.out.println("You landed in position 9: "+results[8]+" times.");
+
+        System.out.println("Total points earned: " + VALUES[position/2]);
+
+    }    
 
     public static void printModeStatement() {
         System.out.print(
@@ -118,8 +201,8 @@ class Plinko {
             + "\t(3) Quit\n"
         );
     }
- }
+ 
     
-    
-
 }
+
+
