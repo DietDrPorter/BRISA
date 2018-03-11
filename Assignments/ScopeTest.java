@@ -1,4 +1,4 @@
- class ScopeTest {
+ /* class ScopeTest {
        /* public static String message = "Hello";
         public static Boolean shouldLoop = false;
 
@@ -27,15 +27,33 @@
             }
         } */
 
-        public static void main(String args[]) { 
+      /*  public static void main(String args[]) { 
             String message = "Hello World";
-                for(int i = 0; i < message.length(); i++) {
-                    if(message.char(i) == 'W') {
+            int i;
+                for( i = 0; i < message.length(); i++) {
+                    if(message.charAt(i) == 'W') {
                      break;
                     }
-                }             
+                }  
+                System.out.println("W found at index " + i);           
         
         }    
 
 
+ } */
+
+    class Powers {
+    public static final int n = 32;
+    public static int base = 2;
+
+    public static void main(String[] args) {
+        int i;
+        for( i = 0; i <= n; i++) {
+            power();
+        }
     }
+
+    public static void power() {
+        return -1;
+    }
+}
