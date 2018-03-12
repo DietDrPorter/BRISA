@@ -151,10 +151,12 @@ class Plinko {
                 } else {
                     position--;
                 }
-            }
             results[position/2]++;
-        }
+            }
 
+       // results[position/2]++;
+        }
+        
     }
 
      public static void singleDisc() {
