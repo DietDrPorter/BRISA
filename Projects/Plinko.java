@@ -37,37 +37,39 @@ class Plinko {
             }
         }
     }
-        public static void userInput() {
-           while (true) {
-            Scanner scan1 = new Scanner(System.in);
-            System.out.println("Select a number 0-8:");
-                if(scan1.hasNextInt()) {
-                       position = scan1.nextInt();
-                       position *= 2;
-                    if (8 > position  ||  0 < position) {
-                            break;
-                        }
-                        else {
-                            continue;
-                        }
-                      
-                }
-            }    
-        }
 
-        public static void discAmount() {
-           while(true) {
-            Scanner scan2 = new Scanner(System.in);
-            System.out.println("Enter the number of disks:");
-            int discs = scan2.nextInt();
-                if(0 < discs ) {
-                break;
-                }
-                else {
-                    continue;
-                }
+    public static void userInput() {
+        System.out.println("Hello");
+        while (true) {
+        Scanner scan1 = new Scanner(System.in);
+        System.out.println("Select a number 0-8:");
+            if(scan1.hasNextInt()) {
+                position = scan1.nextInt();
+                if (8 >= position  &&  0 <= position) {
+                    position *=2;
+                    break;
+                    }
+                    else {
+                        continue;
+                    }
+                    
+            }
+        }    
+    }
+
+    public static void discAmount() {
+        while(true) {
+        Scanner scan2 = new Scanner(System.in);
+        System.out.println("Enter the number of disks:");
+            discs = scan2.nextInt();
+            if(0 < discs ) {
+            break;
+            }
+            else {
+                continue;
             }
         }
+    }
 
     public static int runEvenRow(int position) {
        System.out.print("|");
@@ -136,8 +138,9 @@ class Plinko {
         }
     }
 
-        public static void multiProb() { //Runs the Multi Disc to achieve statistics 
+    public static void multiProb() { //Runs the Multi Disc to achieve statistics 
 
+        System.out.println("Discs: " + discs);
         for(int n = 1; n <= discs; n++) {
             for(int i = 1; i < 13; i++) {
                 if(position == 16) {
@@ -151,22 +154,25 @@ class Plinko {
                 } else {
                     position--;
                 }
-            results[position/2]++;
             }
 
-       // results[position/2]++;
+           
+            results[position/2]++;
         }
         
     }
-
+     
+     
      public static void singleDisc() {
-       
+        
          userInput();
          discRun();
 
          System.out.println("Disc results:" +position/2);
-        }
- 
+       
+        
+     }   
+    
     public static void multiDisc() {
 
         userInput();
