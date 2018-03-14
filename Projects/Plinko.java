@@ -9,6 +9,7 @@ class Plinko {
     public static int[] results = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public static int mode = -1;
+    public static int origPosition = -1;
     public static int position = -1;
     public static int discs = -1;
     
@@ -39,13 +40,12 @@ class Plinko {
     }
 
     public static void userInput() {
-        System.out.println("Hello");
         while (true) {
         Scanner scan1 = new Scanner(System.in);
         System.out.println("Select a number 0-8:");
             if(scan1.hasNextInt()) {
-                position = scan1.nextInt();
-                if (8 >= position  &&  0 <= position) {
+                origPosition = scan1.nextInt();
+                if (8 >= origPosition  &&  0 <= origPosition) {
                     position *=2;
                     break;
                     }
@@ -140,7 +140,7 @@ class Plinko {
 
     public static void multiProb() { //Runs the Multi Disc to achieve statistics 
 
-        System.out.println("Discs: " + discs);
+        position = origPosition;
         for(int n = 1; n <= discs; n++) {
             for(int i = 1; i < 13; i++) {
                 if(position == 16) {
