@@ -140,7 +140,7 @@ class Plinko {
 
     public static void multiProb() { //Runs the Multi Disc to achieve statistics 
 
-        position = origPosition;
+        int position = origPosition;
         for(int n = 1; n <= discs; n++) {
             for(int i = 1; i < 13; i++) {
                 if(position == 16) {
