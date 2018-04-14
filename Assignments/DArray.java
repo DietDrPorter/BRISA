@@ -42,7 +42,7 @@ class DArray {
     //[2,4,8]
     //[16,32,64]
     //[2,2,2]
-    //[2,2,2] */
+    //[2,2,2] 
 
         int num = 3;
     for(int i = 0; i < arr3.length; i++) {
@@ -55,10 +55,33 @@ class DArray {
     for(int i = 0; i < arr2.length; i++) {
         for(int j = 0; j < arr2[i].length; j++) {
             arr3[i][j] = num; 
-            num -= 1;
+            num -= 1; */
         }
     }
+    //2] mat = matrix
+        int s = 1;
+        for(int i = 0; i < mat.length; i++)
+        {
+            for(int j = 0; j < mat[i].length; j++)
+            {
+                mat[i][j] = s;
+                s++;
+            }
+        }
+        reverseMatrix(mat);
+    }
 
+
+    public static int[][] reverseMatrix(int[][] mat) 
+    {
+        for(int i = 0; i < mat.length; i++){
+            for(int j = 0; j < mat[i].length; j++) {
+                int t = mat[i][j];
+                mat[i][j] = mat[i][mat[i].length - i - 1];
+                mat[i][mat[j].length - i - 1] = t;
+            }
+        }
+        return mat;
     }
 
 }    
